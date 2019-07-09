@@ -22,7 +22,9 @@ Tiny cluster helper: A tiny tool to make it easy to run command over ssh on clus
 \#       e_px: same as command "e" but will execute command in parallel. 
 
 \### Define your hosts/vms list here - BEGIN ################################################
-all=\"
+aaa
+bbb
+all="
 vm0
 vm1
 vm2
@@ -31,7 +33,7 @@ vm4
 vm5
 vm6
 vm7
-\"
+"
 
 worker="
 vm1
