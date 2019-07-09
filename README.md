@@ -49,6 +49,7 @@ oracle@vm2
 oracle@vm3
 "
 
+
 GROUP_LIST="all|worker|tester"
 
 \### Define your hosts/vms list here - END ################################################
