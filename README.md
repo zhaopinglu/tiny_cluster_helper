@@ -21,36 +21,5 @@ Tiny cluster helper: A tiny tool to make it easy to run command over ssh on clus
 \#       e_tty: same as command "e" but with tty. 
 \#       e_px: same as command "e" but will execute command in parallel. 
 
-\### Define your hosts/vms list here - BEGIN ################################################
+![alt text](/Screenshot/vm_list.png)
 
-all="
-vm0
-vm1
-vm2
-vm3
-vm4
-vm5
-vm6
-vm7
-"
-
-worker="
-vm1
-vm2
-vm3
-vm4
-vm5
-vm6
-vm7
-"
-
-tester="
-oracle@vm1
-oracle@vm2
-oracle@vm3
-"
-
-
-GROUP_LIST="all|worker|tester"
-
-\### Define your hosts/vms list here - END ################################################
