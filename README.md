@@ -3,6 +3,7 @@ Tiny cluster helper: A tiny tool to make it easy to run command over ssh on clus
 Author: zhaopinglu77@gmail.com
 
 # Quick Example:
+Execute "w" command on every VMs defined in node group "all"
 ```
 [root@vm1 ~]$ e all w
 ### Execute command (w) on node (vm0). ###
