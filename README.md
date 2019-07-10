@@ -6,33 +6,33 @@ Author: zhaopinglu77(at)gmail.com
 # Quick Example:
 Execute "w" command on every VMs defined in node group "all"
 
-[root@vm1 ~]$ e all w
+    [root@vm0 ~]$ e all w
     ### Execute command (w) on node (vm0). ###
-     19:28:48 up 1 day, 21:13,  2 users,  load average: 0.44, 0.43, 0.60
+     22:37:35 up 2 days, 22 min,  3 users,  load average: 0.16, 0.18, 0.19
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-    root     pts/0    salt             03:23   23:28   1.55s  1.55s -bash
-    root     :0       :0               Mon03   ?xdm?   8:26m  1.19s /usr/libexec/gnome-session-binary --session gnome-classic
+    root     pts/1    salt             22:23   14:06   0.09s  0.09s -bash
+    root     pts/0    salt             22:22    2.00s  0.32s  0.32s -bash
+    root     :0       :0               Mon03   ?xdm?   9:02m  1.24s /usr/libexec/gnome-session-binary --session gnome-classic
     ### Execute command (w) on node (vm1). ###
-     19:28:48 up 1 day, 21:30,  1 user,  load average: 0.03, 0.13, 0.09
+     22:37:35 up 2 days, 39 min,  0 users,  load average: 0.08, 0.07, 0.05
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-    root     pts/0    salt             19:01    4.00s  0.34s  0.00s ssh -C -o ControlMaster=auto -o ControlPersist=6000s -o ConnectTimeout=4 -o ControlPath=/tmp/ssh_mux_%h_%p_%r vm1 w
     ### Execute command (w) on node (vm2). ###
-     19:28:48 up 2 days, 16:07,  0 users,  load average: 0.03, 0.07, 0.04
+     22:37:35 up 2 days, 19:16,  0 users,  load average: 0.16, 0.07, 0.04
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
     ### Execute command (w) on node (vm3). ###
-     19:28:48 up 2 days, 16:07,  0 users,  load average: 0.14, 0.08, 0.02
+     22:37:35 up 2 days, 19:16,  0 users,  load average: 0.00, 0.03, 0.02
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
     ### Execute command (w) on node (vm4). ###
-     19:28:48 up 2 days, 16:07,  0 users,  load average: 0.00, 0.02, 0.00
+     22:37:35 up 2 days, 19:16,  0 users,  load average: 0.00, 0.00, 0.00
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
     ### Execute command (w) on node (vm5). ###
-     19:28:48 up 2 days, 16:07,  0 users,  load average: 0.00, 0.03, 0.00
+     22:37:36 up 2 days, 19:16,  0 users,  load average: 0.06, 0.07, 0.02
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
     ### Execute command (w) on node (vm6). ###
-     19:28:48 up 2 days, 16:07,  0 users,  load average: 0.05, 0.02, 0.00
+     22:37:36 up 2 days, 19:16,  0 users,  load average: 0.16, 0.05, 0.01
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
     ### Execute command (w) on node (vm7). ###
-     19:28:48 up 2 days, 16:07,  0 users,  load average: 0.00, 0.01, 0.02
+     22:37:36 up 2 days, 19:16,  0 users,  load average: 0.01, 0.02, 0.00
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 
 
@@ -45,8 +45,26 @@ Execute "w" command on every VMs defined in node group "all"
 20190708, Remove some unrelevant functions. Improve and Simplify the rest.
 
 # How to use:
-1. Put this single script in any place. Add your host or vm list the header of this script as below. 
-![alt text](/Screenshot/vm_list.png)
+## 1. Put this single script in any place. Add your host or vm list the header of this script as below. 
+
+    ### Define your hosts/vms list here - BEGIN ################################################
+    all="
+    vm0
+    vm1
+    vm2
+    vm3
+    vm4
+    vm5
+    vm6
+    vm7
+    "
+    worker="
+    vm1
+    vm2
+    vm3
+    "
+    GROUP_LIST="all|worker"
+    ### Define your hosts/vms list here - END ################################################
 
 ## 2. Source this script: 
 
