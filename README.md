@@ -46,6 +46,7 @@ USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 
 # How to use:
 1. Put this single script in any place. Add your host or vm list the header of this script as below. 
+![alt text](/Screenshot/vm_list.png)
 
 2. Source this script, like: "source tiny_cluster_helper.sh"
 
@@ -53,21 +54,21 @@ USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 
 4. Enjor the following commands:
 
-       c: copy file or folder to remote nodes.         eg: 
+ c: copy file or folder to remote nodes.         eg: 
        ```
        c all mydata.csv /tmp
        ```
        
-       e: execute command/script on remote nodes.      eg: 
+ e: execute command/script on remote nodes.      eg: 
        ```
        e all hostname
        ```
        
-       e_tty: same as command "e" but with tty. 
-       
-       e_px: same as command "e" but will execute command in parallel. 
+ e_tty: same as command "e" but with tty. 
+    
+ e_px: same as command "e" but will execute command in parallel. 
 
-![alt text](/Screenshot/vm_list.png)
+
 
 
 
