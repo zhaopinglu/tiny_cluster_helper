@@ -69,10 +69,15 @@ Execute "w" command on every VMs defined in node group "all"
     Note: all nodes will use the same password.
 
 ## 4. Done. Now please enjoy the commands listed as below
-c       : copy file to remote nodes
-e       : Execute command in remote nodes
-e_px    : Same as e but in parallel
-e_tty   : Same as e but with tty
+**c**       : copy file to remote nodes
+
+**e**       : Execute command in remote nodes
+
+**e_px**    : Same as e but in parallel
+
+**e_tty**   : Same as e but with tty
+
+
 
 # Examples
 
