@@ -48,32 +48,82 @@ USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 1. Put this single script in any place. Add your host or vm list the header of this script as below. 
 ![alt text](/Screenshot/vm_list.png)
 
-2. Source this script: 
+## 2. Source this script: 
 
-```source tiny_cluster_helper.sh```
+       ```
+       source tiny_cluster_helper.sh
+       ```
 
-3. Create ssh equivalent, eg: "ssheq all", then input the password. Note: all node should have the same password.
+## 3. Create ssh equivalent, eg: "ssheq all", then input the password. Note: all node should have the same password.
 
-```ssheq all```
+       ```
+       ssheq all
+       ```
 
-4. Enjor the following commands:
+## 4. Enjor the following commands:
 
-    c: copy file or folder to remote nodes.         eg: 
+   ### Copy file or folder to remote nodes.   
     
        ```
        c all mydata.csv /tmp
        ```
        
-    e: execute command/script on remote nodes.      eg: 
+   ### Execute command/script on remote nodes
     
        ```
-       e all hostname
+       e all date
+       
+       ### Execute command (date) on node (vm0). ###
+       Tue Jul  9 22:26:47 EDT 2019
+       ### Execute command (date) on node (vm1). ###
+       Tue Jul  9 22:26:48 EDT 2019
+       ### Execute command (date) on node (vm2). ###
+       Tue Jul  9 22:26:48 EDT 2019
+       ### Execute command (date) on node (vm3). ###
+       Tue Jul  9 22:26:48 EDT 2019
+       ### Execute command (date) on node (vm4). ###
+       Tue Jul  9 22:26:48 EDT 2019
+       ### Execute command (date) on node (vm5). ###
+       Tue Jul  9 22:26:48 EDT 2019
+       ### Execute command (date) on node (vm6). ###
+       Tue Jul  9 22:26:48 EDT 2019
+       ### Execute command (date) on node (vm7). ###
+       Tue Jul  9 22:26:48 EDT 2019
+
+       real	0m0.562s
+       user	0m0.038s
+       sys	0m0.064s
        ```
        
-    e_tty: same as command "e" but with tty. 
+   ### Execute command/script on remote nodes with tty
+       
+       ```
+       e_tty all hostname
+       ```   
     
-    e_px: same as command "e" but will execute command in parallel. 
+   ### Execute command/script on remote nodes in parallel
 
+       ```
+       e_px all date
+       
+       ### Execute command (date) on node (vm0) in background. ###
+       ### Execute command (date) on node (vm1) in background. ###
+       ### Execute command (date) on node (vm2) in background. ###
+       ### Execute command (date) on node (vm3) in background. ###
+       ### Execute command (date) on node (vm4) in background. ###
+       ### Execute command (date) on node (vm5) in background. ###
+       ### Execute command (date) on node (vm6) in background. ###
+       ### Execute command (date) on node (vm7) in background. ###
+       Tue Jul  9 22:29:07 EDT 2019
+       Tue Jul  9 22:29:07 EDT 2019
+       Tue Jul  9 22:29:07 EDT 2019
+       Tue Jul  9 22:29:07 EDT 2019
+       Tue Jul  9 22:29:07 EDT 2019
+       Tue Jul  9 22:29:07 EDT 2019
+       Tue Jul  9 22:29:07 EDT 2019
+       Tue Jul  9 22:29:07 EDT 2019
+       [1]+  Done                    _exec_on $@
+       ```   
 
 
 
