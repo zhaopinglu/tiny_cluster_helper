@@ -6,7 +6,7 @@ Author: zhaopinglu77(at)gmail.com
 # Quick Example:
 Execute "w" command on every VMs defined in node group "all"
 
-    [root@vm0 ~]$ e all w
+    [root@vm0 ~]$ **e all w**
     ### Execute command (w) on node (vm0). ###
      22:37:35 up 2 days, 22 min,  3 users,  load average: 0.16, 0.18, 0.19
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
