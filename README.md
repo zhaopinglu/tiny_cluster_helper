@@ -45,7 +45,7 @@ Execute "w" command on every VMs defined in node group "all"
 20190708, Remove some unrelevant functions. Improve and Simplify the rest.
 
 # How to use:
-## 1. Put this single script in any place. Add your host or vm list the header of this script as below. 
+## 1. Define host or vm list in the header of tiny_cluster_helper.sh
 
     ### Define your hosts/vms list here - BEGIN ################################################
     all="
@@ -70,15 +70,33 @@ Execute "w" command on every VMs defined in node group "all"
 
        source tiny_cluster_helper.sh
 
-## 3. Create ssh equivalent, eg: "ssheq all", then input the password. Note: all node should have the same password.
+## 3. Create ssh equivalent
 
        ssheq all
+
+    Note: all nodes will use the same password.
 
 ## 4. Enjor the following commands:
 
    ### Copy file or folder to remote nodes.   
     
-       c all mydata.csv /tmp
+    [root@vm0 ~]$ c all mydata.csv /tmp
+    ### Copy file/folder (mydata.csv) to (vm0:/tmp). ###
+    mydata.csv                                             100%    0     0.0KB/s   00:00    
+    ### Copy file/folder (mydata.csv) to (vm1:/tmp). ###
+    mydata.csv                                             100%    0     0.0KB/s   00:00    
+    ### Copy file/folder (mydata.csv) to (vm2:/tmp). ###
+    mydata.csv                                             100%    0     0.0KB/s   00:00    
+    ### Copy file/folder (mydata.csv) to (vm3:/tmp). ###
+    mydata.csv                                             100%    0     0.0KB/s   00:00    
+    ### Copy file/folder (mydata.csv) to (vm4:/tmp). ###
+    mydata.csv                                             100%    0     0.0KB/s   00:00    
+    ### Copy file/folder (mydata.csv) to (vm5:/tmp). ###
+    mydata.csv                                             100%    0     0.0KB/s   00:00    
+    ### Copy file/folder (mydata.csv) to (vm6:/tmp). ###
+    mydata.csv                                             100%    0     0.0KB/s   00:00    
+    ### Copy file/folder (mydata.csv) to (vm7:/tmp). ###
+    mydata.csv                                             100%    0     0.0KB/s   00:00
        
    ### Execute command/script on remote nodes
     
