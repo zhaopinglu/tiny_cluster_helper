@@ -52,9 +52,19 @@ USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 3. Create ssh equivalent, eg: "ssheq all", then input the password. Note: all node should have the same password.
 
 4. Enjor the following commands:
-       c: copy file or folder to remote nodes.         eg: c all mydata.csv /tmp
-       e: execute command/script on remote nodes.      eg: e all hostname
+
+       c: copy file or folder to remote nodes.         eg: 
+       ```
+       c all mydata.csv /tmp
+       ```
+       
+       e: execute command/script on remote nodes.      eg: 
+       ```
+       e all hostname
+       ```
+       
        e_tty: same as command "e" but with tty. 
+       
        e_px: same as command "e" but will execute command in parallel. 
 
 ![alt text](/Screenshot/vm_list.png)
