@@ -6,7 +6,7 @@ Author: zhaopinglu77(at)gmail.com
 # Quick Example:
 Execute "w" command on every VMs defined in node group "all"
 
-    [root@vm0 ~]$ **e all w**
+    [root@vm0 ~]$ e all w
     ### Execute command (w) on node (vm0). ###
      22:37:35 up 2 days, 22 min,  3 users,  load average: 0.16, 0.18, 0.19
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
@@ -36,14 +36,6 @@ Execute "w" command on every VMs defined in node group "all"
     USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 
 
-
-# Update Logs:
-20160701, created
-
-20181102, Modify copy_from function.
-
-20190708, Remove some unrelevant functions. Improve and Simplify the rest.
-
 # How to use:
 ## 1. Define host or vm list in the header of tiny_cluster_helper.sh
 
@@ -66,7 +58,7 @@ Execute "w" command on every VMs defined in node group "all"
     GROUP_LIST="all|worker"
     ### Define your hosts/vms list here - END ################################################
 
-## 2. Source this script: 
+## 2. Source this script
 
        source tiny_cluster_helper.sh
 
@@ -76,9 +68,15 @@ Execute "w" command on every VMs defined in node group "all"
 
     Note: all nodes will use the same password.
 
-## 4. Enjor the following commands:
+## 4. Done. Now please enjoy the commands listed as below
+c       : copy file to remote nodes
+e       : Execute command in remote nodes
+e_px    : Same as e but in parallel
+e_tty   : Same as e but with tty
 
-   ### Copy file or folder to remote nodes.   
+# Examples
+
+   ## Copy file or folder to remote nodes.   
     
     [root@vm0 ~]$ c all mydata.csv /tmp
     ### Copy file/folder (mydata.csv) to (vm0:/tmp). ###
@@ -98,7 +96,7 @@ Execute "w" command on every VMs defined in node group "all"
     ### Copy file/folder (mydata.csv) to (vm7:/tmp). ###
     mydata.csv                                             100%    0     0.0KB/s   00:00
        
-   ### Execute command/script on remote nodes
+   ## Execute command/script on remote nodes
     
     [root@vm0 ~]$ time e all date
     ### Execute command (date) on node (vm0). ###
@@ -122,7 +120,7 @@ Execute "w" command on every VMs defined in node group "all"
     user	0m0.036s
     sys	0m0.065s
        
-   ### Execute command/script on remote nodes with tty
+   ## Execute command/script on remote nodes with tty
        
     [root@vm0 ~]$ time e_tty all date
     ### Execute command (date) on node (vm0) with ssh tty option. ###
@@ -154,7 +152,7 @@ Execute "w" command on every VMs defined in node group "all"
     user	0m0.035s
     sys	0m0.070s
     
-   ### Execute command/script on remote nodes in parallel
+   ## Execute command/script on remote nodes in parallel
 
     [root@vm0 ~]$ time e_px all date
     [1] 31496
@@ -183,6 +181,12 @@ Execute "w" command on every VMs defined in node group "all"
 
 
 
+# Update Logs:
+20160701, created
+
+20181102, Modify copy_from function.
+
+20190708, Remove some unrelevant functions. Improve and Simplify the rest.
 
 
 
