@@ -48,25 +48,31 @@ USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 1. Put this single script in any place. Add your host or vm list the header of this script as below. 
 ![alt text](/Screenshot/vm_list.png)
 
-2. Source this script, like: "source tiny_cluster_helper.sh"
+2. Source this script: 
+
+```source tiny_cluster_helper.sh```
 
 3. Create ssh equivalent, eg: "ssheq all", then input the password. Note: all node should have the same password.
 
+```ssheq all```
+
 4. Enjor the following commands:
 
- c: copy file or folder to remote nodes.         eg: 
+    c: copy file or folder to remote nodes.         eg: 
+    
        ```
        c all mydata.csv /tmp
        ```
        
- e: execute command/script on remote nodes.      eg: 
+    e: execute command/script on remote nodes.      eg: 
+    
        ```
        e all hostname
        ```
        
- e_tty: same as command "e" but with tty. 
+    e_tty: same as command "e" but with tty. 
     
- e_px: same as command "e" but will execute command in parallel. 
+    e_px: same as command "e" but will execute command in parallel. 
 
 
 
